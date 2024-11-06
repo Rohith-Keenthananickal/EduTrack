@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parent Login</title>
+	{% load static %}
+	{% include 'includes/bootstrap.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static 'parents/css/login.css' %}">
+	<script src="{% static 'common/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+	<script src="{% static 'parents/js/login.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="form sign-in-container">
+		<form class="ajax">
+			<h1>Sign in</h1>
+			
+			<input type="number" class="form-control" id="phno" placeholder="Phone Number" name="phno">
+			
+			<a>Press Sign In to Continue</a>
+			<button class="signin">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Sign UP</h1>
+				<p class="hide">Sign up here if you don't have account.</p>
+				<input type="number" class="form-control" id="otp" placeholder="Enter the OTP" name="otp">
+				<button class="signup_btn">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

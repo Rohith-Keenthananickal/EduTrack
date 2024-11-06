@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <link href="{% static 'students/css/timetable.css' %}" rel=stylesheet>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="{% static 'students/js/timetable.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/b-html5-2.3.3/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/b-html5-2.3.3/datatables.min.js"></script>
+        <title>TimeTable</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="http://localhost/dashboard/datalyst2/datalyst">EduTrack</a></h1>
+        </header>
+        <section class="wrapper">
+            <section id="main" class="">
+                <div class="semester">
+                    <label>Select Semester</label>
+                    <select name="semester" id="sem">
+                        {% for s in semester %}
+                                <option value="{{s.id}}">{{s.semester_name|upper}}</option>
+                                {% endfor %}
+                    </select>
+                </div>     
+                <div class="container table-responsive">
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                             <tr>
+                                <th>Days</th>
+                                <th>Hour 1</th>
+                                <th>Hour 2</th>
+                                <th>Hour 3</th>
+                                <th>Hour 4</th>
+                                <th>Hour 5</th>
+                                <th>Hour 6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                            <tr class="table-monday">
+                                <th>Monday</th>
+                                
+                            </tr>
+                            <tr class="table-tuesday">
+                                <th>Tuesday</th>
+                                
+                            </tr>
+                            <tr class="table-wednesday">
+                                <th>Wednesday</th>
+                                
+                            </tr>
+                            <tr class="table-thursday">
+                                <th>Thursday</th>
+                                
+                            </tr>
+                            <tr class="table-friday">
+                                <th>Friday</th>
+                                
+                            </tr>
+                        </tbody>    
+                    </table>
+                </div>
+
+                
+                
+            </section>
+        </section>
+        
+    </body>
+</html>

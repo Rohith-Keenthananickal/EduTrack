@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'department/js/jquery-3.6.1.min.js' %}"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'others/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'others/favicon-16x16.png' %}">
+        {% include 'includes/datatables.html' %}
+        <link rel="stylesheet" href="{% static 'department/css/view_department.css' %}">
+        <script src="{% static 'department/js/script.js' %}"></script>
+        <title>Department</title>
+    </head>
+    <body>
+        <header>
+            <div class="left">
+                <!-- <h1 class="logo-image"><a href="#"><img src="{% static 'others/favicon-32x32.png' %}" alt="logo" /></a></h1> -->
+                <h1 class="name"><a href="#">EduTrack</a></h1>
+            </div>
+            <div class="right">
+               <h1><a href=""><img src="../../../../../../images/user.png" alt="profile"></a></h1>
+               <span class="name"><a href="#">Admin</a></span>
+            </div>
+            
+        </header>
+        <section id="main">
+            <div class="table">
+                <table id="example" class="table table-striped hover" style="width:80%">
+                    <thead>
+                        <tr>
+                            <th>DepartMent Name</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for dep in department %}
+                        <tr>
+                            <td>{{dep.department_name}}</td>
+                            <td>{{dep.category}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>DepartMent Name</th>
+                            <th>Category</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+		{% load static %}
+        <meta charset="UTF-8">
+        <title>Admin Dashboard </title>
+		{% include 'includes/bootstrap.html' %}
+        <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
+        <!-- Boxiocns CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="{% static 'dashboard/js/jquery-3.6.1.min.js' %}"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="{% static 'dashboard/js/script.js' %}"></script>
+    </head>
+	<body>
+		<div class="wrapper">
+			<div class="loader"></div>
+		</div>
+		<div class="sidebar close" id="nav">
+			<div class="logo-details">
+				<i class=''><img src="{% static 'others/favicon-16x16.png' %}"></i>
+				<span class="logo_name">Admin Pannel</span>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a href="#">
+					<i class='bx bx-grid-alt' ></i>
+					<span class="link_name">Dashboard</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Category</a></li>
+					</ul>
+				</li>
+			
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bxs-user-pin bx-flip-horizontal' ></i>
+						<span class="link_name dropdownlink">Teachers</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Teachers</a></li>
+					<li><a href="{% url 'Admin:add_teacher' %}">Add Teachers</a></li>
+					<li><a href="{% url 'Admin:view_teacher' %}">View Teachers</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bxs-book'></i>
+						<span class="link_name dropdownlink">Department</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Department</a></li>
+					<li><a href="{% url 'Department:department' %}">Add Department</a></li>
+					<li><a href="{% url 'Department:view_department' %}">View Departments</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bx-chair'></i>
+						<span class="link_name dropdownlink">Seats</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Seats</a></li>
+					<li><a href="{% url 'Admin:add_seat' %}">Add Seat Details</a></li>
+					<li><a href="{% url 'Admin:edit_seat' %}">Edit Seat</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+					<i class='bx bx-cog' ></i>
+					<span class="link_name">Setting</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Setting</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+			
+		</div>
+		<section class="home-section">
+			<div class="home-content">
+			<i class='bx bx-menu' id="menu"></i>
+			
+			</div>
+			<section id="main">
+				<div class="container py-5">
+					<div class="row" id="row">
+					  	<div class="col-xl-3 col-lg-6 mb-4"></div>
+					</div> 
+			  </div>
+			</section>
+		</section>
+	</body>
+</html>

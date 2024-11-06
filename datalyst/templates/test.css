@@ -1,0 +1,20 @@
+
+body{
+    margin: none !important;
+    padding: none !important;
+    outline: none !important;
+    overflow:  auto !important;
+}
+.num-cards{
+    border-radius: 14px !important;
+}
+.container, .container-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.container div{
+    height:400px !important;
+    width: 100% !important;
+}

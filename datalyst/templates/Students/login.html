@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <Content-Security-Policy: default-src 'self'; script-src 'self' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline';/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'students/css/style.css' %}">
+        <title>Student's Login</title>
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="{% url 'Student:student/signup' %}" method="post">
+                    {% csrf_token %}
+                    <h4>Don't Have an Account ?</h4>
+                    <h1>Create Account</h1>
+                    <button class="signup">Sign Up</button>
+                </form>
+            </div>
+          <div class="form-container sign-in-container">  
+                <form action="{% url 'Student:student/loginss' %}" id="form" method="post" class="ajax2">
+                    <h1>Login</h1>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" name="email" />
+                    <input type="password" placeholder="Password" name="password" />
+                    <a href="#">Forgot your password?</a>
+                    <button class="login">Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Already Have an Account?</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>New Here?</h1>
+                        <p>Enter your personal details and create your account</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="js/sweetalert2.min.js"></script> -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script src="{% static 'students/js/script1.js' %}"></script>
+    </body>
+</html>
+
+
+
+

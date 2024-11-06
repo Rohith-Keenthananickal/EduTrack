@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+
+<html lang="en" dir="ltr">
+    <head>
+		{% load static %}
+        <meta charset="UTF-8">
+        <title>Student Dashboard </title>
+		{% include 'includes/bootstrap.html' %}
+        <link rel="stylesheet" href="{% static 'students/css/dashboard.css' %}">
+        <!-- Boxiocns CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/883a6fbfa4.js" crossorigin="anonymous"></script>
+		
+		<script src="{% static 'common/sweetalert2.min.js' %}"></script>
+		<script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="{% static 'students/js/script.js' %}"></script>
+		
+    </head>
+	<body>
+		<div class="wrapper">
+			<div class="loader"></div>
+		</div>
+		<div class="sidebar close" id="nav">
+			<div class="logo-details">
+				<i class=''><img src="{% static 'others/favicon-16x16.png' %}"></i>
+				<span class="logo_name">Student Pannel</span>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a href="#">
+					<i class='bx bx-grid-alt' ></i>
+					<span class="link_name">Dashboard</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Category</a></li>
+					</ul>
+				</li>
+			
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-list-check"></i>
+						<span class="link_name dropdownlink">Marks</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Marks</a></li>
+					<li><a href="{% url 'Student:student/mark' %}">View Marks</a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-calendar-check"></i>
+						<span class="link_name dropdownlink">Attendance</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Attendance</a></li>
+					<li><a href="{% url 'Student:student/attendance' %}">View Attendance</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-business-time"></i>
+						<span class="link_name dropdownlink">Timetable</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Timetable</a></li>
+					<li><a href="{% url 'Student:student/timetable' %}">View Timetable</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-code"></i>
+						<span class="link_name dropdownlink">Battleground</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Code</a></li>
+					<li><a href="{% url 'Student:student/playground' %}">Web Programming</a></li>
+					<li><a href="{% url 'Student:student/pyscript' %}">Live Python</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#">
+					<i class='bx bx-cog' ></i>
+					<span class="link_name">Setting</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Setting</a></li>
+					</ul>
+				</li>
+			</ul>
+			
+		</div>
+		<section class="home-section">
+			<div class="home-content">
+				<i class='bx bx-menu' id="menu"></i>
+				<div class="new_nav">
+						<div class="left">
+							<div class="profile2">
+								<!-- <div class="btn-group">
+									<button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+										Action
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Action</a></li>
+										<li><a class="dropdown-item" href="#">Another action</a></li>
+										<li><a class="dropdown-item" href="#">Something else here</a></li>
+										<li><hr class="dropdown-divider"></li>
+										<li><a class="dropdown-item" href="#">Separated link</a></li>
+									</ul>
+								</div> -->
+								
+							</div>
+						</div>
+
+				</div>
+			</div>
+			
+				
+		</section>
+		<div id="main">
+			<div class="item">
+				<h1></h1>
+				<div class="container">
+					<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+						<div class="card h-100">
+							<div class="card-body">
+								<form method="POST" action="{% url 'Student:student/profile_update' %}" class="ajax">
+									{% csrf_token %}
+								<div id="form">
+									
+									<div class="row gutters">
+										{% for s in student %}
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="fName">First Name</label>
+												<input type="text" name="fname" value="{{s.first_name}}" class="form-control" id="fname" placeholder="Enter First name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="mname">Middle Name</label>
+												<input type="text" name="mname" value="{{s.middle_name}}" class="form-control" id="mname" placeholder="Enter Middle Name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Last Name</label>
+												<input type="text" name="lname" value="{{s.last_name}}" class="form-control" id="lname" placeholder="Enter Last Name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="email">Email</label>
+												<input type="email" name="email" value="{{s.email}}" class="form-control" id="email" placeholder="Email">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="pht">Phone Number</label>
+												<input type="number" name="ph_no" value="{{s.phone_number}}" class="form-control" id="ph" placeholder="Enter Phone Number">
+											</div>
+										</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Admno</label>
+												<input type="number" name="admno" value="{{s.admno}}" class="form-control" id="admno" placeholder="Enter Admission Number">
+											</div>
+										</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Gender</label>
+									<input type="text" name="gender" value="{{s.gender}}" class="form-control" id="gender" placeholder="Enter Last Name">
+											</div>
+										</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Roll No</label>
+												<input type="number" name="rollno" value="{{s.rollno}}" class="form-control" id="rollno" placeholder="Enter Rollno">
+											</div>
+										</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Register Number</label>
+												<input type="number" name="regno" value="{{s.register_number}}" class="form-control" id="regno" placeholder="Enter Register Number">
+											</div>
+										</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Address</label>
+												<textarea name="address" class="form-control" id="address" placeholder="Enter Address">{{s.address}}</textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}  
+								
+								<div class="row gutters">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+										<div class="text-right">
+											<button type="button" id="submit-btn" name="submit" class="btn btn-primary">Edit</button>
+										</div>
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

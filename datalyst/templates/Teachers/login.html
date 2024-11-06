@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+	<title>Teacher Login</title>
+    {% include 'includes/bootstrap.html' %}
+	<link rel="stylesheet" type="text/css" href="{% static 'teachers/login/css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+	<script src="{% static 'common/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+	<script src="{% static 'teachers/js/teacher_login.js' %}"></script>
+</head>
+<body>
+<div class="container">
+	<div class="form sign-in-container">
+		<form action="{% url 'Teachers:teacher/login' %}" method="post" class="ajax">
+            {% csrf_token %}
+			<h1>Sign in</h1>
+			<input type="email" class="form-control" name="email" placeholder="User Email" required>
+			<input type="password" class="form-control" name="password" placeholder="Password" required>
+			<a href="#">Forgot your password?</a>
+			<button class="signin">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Teacher Login</h1>
+				<p>Contact Your Admin If You Don't Have An Account</p>
+				<button class="signup_btn">Contact</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

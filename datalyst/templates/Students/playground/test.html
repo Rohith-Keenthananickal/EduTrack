@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <link rel="stylesheet" href="./codemirror/theme/darcula.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="editor"><p>ROhith</p></textarea>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("editor"),{
+            mode : "xml",
+            theme : "darcula",
+            lineNumbers : true
+        })
+    </script>
+</body>
+</html>

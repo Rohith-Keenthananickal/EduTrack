@@ -1,0 +1,139 @@
+div.wrapper{
+    align-items: center;
+    background-color: #1D1F20;
+    display: flex;
+    justify-content: center;
+    height: 102vh;
+    z-index: 100;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+  
+}
+
+.loader  {
+
+    animation: rotate 1s infinite;  
+    height: 50px;
+    width: 50px;
+  }
+  
+  .loader:before,
+  .loader:after {   
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;  
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;  
+    background-color: #cb2025;
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite; 
+    background-color: #00a096;
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  
+  @keyframes rotate {
+    0% { 
+      -webkit-transform: rotate(0deg) scale(0.8); 
+      -moz-transform: rotate(0deg) scale(0.8);
+    }
+    50% { 
+      -webkit-transform: rotate(360deg) scale(1.2); 
+      -moz-transform: rotate(360deg) scale(1.2);
+    }
+    100% { 
+      -webkit-transform: rotate(720deg) scale(0.8); 
+      -moz-transform: rotate(720deg) scale(0.8);
+    }
+  }
+  
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #f8b334;
+    }
+    50% {
+      box-shadow: 0 0 0 #f8b334;
+      margin-bottom: 0;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #f8b334;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #97bf0d;
+    }
+    50% {
+      box-shadow: 0 0 0 #97bf0d;
+      margin-top: -20px;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #97bf0d;
+      margin-top: 0;
+    }
+  }
+
+
+
+
+
+#test-popup{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    flex-direction: column;
+    gap: 30px
+}
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+.white-popup h1{
+  font-size: 22px;
+  font-weight: 550;
+  position: absolute;
+  top: 5px;
+}
+.white-popup li{
+    list-style: none;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.white-popup ul{
+    display: flex;
+    justify-content: space-around;
+}
+.white-popup ul li a{
+  padding: 10px;
+  text-decoration: none;
+  background-color: black;
+  color: #FFF;
+  transition: 200ms ease-in;
+  transition: 300ms ease-out;
+
+
+    
+}
+.white-popup ul li a:hover{
+  word-spacing: 1px;
+  font-size: 20px;
+  
+}

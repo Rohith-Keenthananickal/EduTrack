@@ -1,0 +1,11 @@
+
+table{
+    width: 80%;
+}
+select.subjects{
+    font-size: 12px;
+}
+div.container{
+    margin-left:40px;
+    margin-right:40px;
+}

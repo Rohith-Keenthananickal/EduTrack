@@ -1,0 +1,14 @@
+section#main{
+    margin: 100px 25px ;
+}
+input.id{
+    display: none;
+}
+button#edit{
+    margin-left: 10px;
+    
+    border-radius: 13px;
+}
+/* select#sem{
+    width: 80px;
+} */

@@ -1,0 +1,13 @@
+#main{
+    padding: 80px 40px;
+}
+#main div.form form{
+    width: 400px;
+}
+#main div.form form div.radio{
+    display: flex;
+    margin-bottom: 25px;
+}
+#main div.form form div.radio div.form-check.pg{
+    margin-left: 20px;
+}

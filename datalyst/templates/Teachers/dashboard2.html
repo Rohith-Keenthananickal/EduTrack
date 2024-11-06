@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+		{% load static %}
+        <meta charset="UTF-8">
+        <title>Teacher Dashboard </title>
+		{% include 'includes/bootstrap.html' %}
+        <link rel="stylesheet" href="{% static 'teachers/css/dashboard.css' %}">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="{% static 'teachers/js/dashboard2.js' %}"></script>
+    </head>
+	<body>
+		<div class="wrapper">
+			<div class="loader"></div>
+		</div>
+		<div class="sidebar close" id="nav">
+			<div class="logo-details">
+				<i class=''><img src="{% static 'teachers/img/favicon-16x16.png' %}"></i>
+				<span class="logo_name">Teacher Pannel</span>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a href="#">
+					<i class='bx bx-grid-alt' ></i>
+					<span class="link_name">Dashboard</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Dashboard</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bxs-book-add'></i>
+						<span class="link_name dropdownlink">Time Table</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+						<li><a class="link_name" href="#"> Time Table</a></li>
+						<li><a href="{% url 'Teachers:teacher/add_subjects' %}">Add Subjects</a></li>
+						<li><a href="{% url 'Teachers:teacher/view_subjects' %}">View Subjects</a></li>
+						<li><a href="{% url 'Teachers:teacher/timetable' %}">Set TimeTable</a></li>
+						<li><a href="{% url 'Teachers:teacher/view_timetable' %}">View TimeTable</a></li>
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bxs-user-pin bx-flip-horizontal' ></i>
+						<span class="link_name dropdownlink">Students</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Students</a></li>
+					<li><a href="{% url 'Teachers:teacher/students' %}">View Students</a></li>
+					
+					
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i class='bx bxs-book-add'></i>
+						<span class="link_name dropdownlink">Attendance</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Attendance</a></li>
+					<li><a href="{% url 'Teachers:teacher/add_attendance' %}">Add Attendance</a></li>
+					<li><a href="{% url 'Teachers:teacher/view_attendance' %}">View Attendance</a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+						<i id="image"><img style="background-color: #FFF;" src="{% static 'teachers/img/journal-plus.svg' %}"/></i>
+						<span class="link_name dropdownlink">Marks</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow'></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Marks</a></li>
+					<li><a href="{% url 'Teachers:teacher/add_marks' %}">Add Marks</a></li>
+					<li><a href="{% url 'Teachers:teacher/view_marks' %}">View Marks</a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+					<i class='bx bx-cog' ></i>
+					<span class="link_name">Setting</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Setting</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<div class="profile-details">
+						<div class="profile-content">
+							<img src="{% static 'teachers/img/profile.jpg" alt="profileImg">
+						</div>
+						<div class="name-job">
+							<div class="profile_name">Prem Shahi</div>
+							<div class="job">Web Desginer</div>
+						</div>
+						<i class='bx bx-log-out' ></i>
+					</div>
+				</li> -->
+			</ul>
+			
+		</div>
+		<section class="home-section">
+			<div class="home-content">
+				<i class='bx bx-menu' id="menu"></i>
+				<div class="new_nav">
+						<div class="left">
+							<h1 class="message" data-bs-toggle="modal" data-bs-target="#exampleModal"><a href="#" ><img src="{% static 'teachers/img/icons8-mail-24.png' %}"  alt="message" /></a></h1>
+							<h1 class="notification"><a href="#"><img src="{% static 'teachers/img/icons8-alarm-24.png' %}" alt="notification" /></a></h1>
+							<!-- <h1 class="profile"><a href="#"><img src="{% static 'teachers/img/profile.jpg" alt="profile" /></a></h1> -->
+							<div class="profile2">
+								<h4 class="name"><a href="#">{{name}}</a></h4>
+								<span class="dropdown_nav"><a href="#"><img src="{% static 'teachers/img/icons8-expand-arrow-24.png' %}" /></a></span>
+							</div>
+						</div>
+
+				</div>
+			</div>
+			
+				
+		</section>
+		<div id="main">
+			<div class="item">
+				<h1>Welcome {{name}}</h1>
+				<div class="container">
+					<div class="row gutters">
+					<!-- <div class="col-lg-3 col-lg-3 col-md-12 col-sm-12 col-12">
+					<div class="card h-100">
+						<div class="card-body">
+							<div class="account-settings">
+								<div class="user-profile">
+									<div class="user-avatar">
+										<img src="https://bootdey.com/img/Content/avatar/avatar7.png' %}" alt="Maxwell Admin">
+									</div>
+									<h5 class="user-name">Yuki Hayashi</h5>
+									<h6 class="user-email">yuki@Maxwell.com</h6>
+								</div>
+								<div class="about">
+									<h5>About</h5>
+									<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div> -->
+					<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+						<div class="card h-100">
+							<div class="card-body">
+								<form method="post" action="{% url 'Teachers:teacher/update_profile' %}">
+								<div id="form">
+									<div class="row gutters">
+										{% for data in teacher_details %}
+										
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="fName">First Name</label>
+												<input type="text" name="fname" value="{{data.first_name}}" class="form-control" id="fname" placeholder="Enter First name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="mname">Middle Name</label>
+												<input type="text" name="mname" value="{{data.middle_name}}" class="form-control" id="mname" placeholder="Enter Middle Name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="lname">Last Name</label>
+												<input type="text" name="lname" value="{{data.last_name}}" class="form-control" id="lname" placeholder="Enter Last Name">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="email">Email</label>
+												<input type="email" name="email" value="{{data.email}}" class="form-control" id="email" placeholder="Email">
+											</div>
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+											<div class="form-group">
+												<label for="pht">Phone Number</label>
+												<input type="number" name="ph_no" value="{{data.phone_number}}" class="form-control" id="ph" placeholder="Enter Phone Number">
+											</div>
+										</div>
+								
+										{% endfor %}
+									</div>
+								
+								</div>
+								
+								
+								<div class="row gutters">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+										<div class="text-right">
+											<button type="button" id="submit-btn" name="submit" class="btn btn-primary">Edit</button>
+										</div>
+									</div>
+								</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+			</div>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Requests</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					
+					<div class="modal-body">
+						<div class="confirm-profile">
+							<ul class="list">
+								{% for s in student %}
+								<li class="" id="modal-body">
+									<a href="#">
+										<div class="left">
+											<!-- <img src="{% static 'images/user-icon.png' %}" alt="icon"> -->
+											<h4 class="name">{{s.first_name}} {{s.middle_name}} {{s.last_name}}</h4><br>
+
+											<p>is requesting to join the class {{s.department}}</p>
+											
+										</div>
+									</a>	
+										<div class="right">
+											<p class="button1">
+												<section class="button-new">
+													<button type="button" class="btn btn-dark btn-sm">Approve</button>
+													<div class="student_classid" id="id">{{s.id}}</div>
+												</section>
+												
+											</p>
+											<p class="button2">
+												<section class="reject">
+													<button type="button" class="btn btn-dark btn-sm">Reject</button>
+													<div class="student_classid" id="id">{{s.id}}</div>
+												</section>
+											</p>
+										</div>
+								</li>
+								{% endfor %}
+								
+							</ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+header{
+    height: 80px;
+    background-color: black;
+    margin:0px;
+    padding: 0px;
+    align-items: center;
+    display: flex;
+
+}
+header h1{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 20px;
+}
+header h1 a{
+    text-decoration: none;
+    color: #FFF;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+body{
+    font-family: Verdana;
+    height: 200vh
+}
+
+div.box1{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid;
+    margin-top: 60px;
+    height: 300px;
+    
+}
+div.box1 input[type=text]{
+    width: 40%;
+    align-items: center;
+    margin: 0 auto;
+}
+div.box1 div.sem{
+    margin-top: 30px;
+}
+div.box1 div{
+    margin-top: 20px;
+}
+div.box1 .button{
+    margin-top: 30px;
+}
+div.box1 .button:hover{
+    font-size: 15px;
+    transition: 400ms ease;
+}
+div.container{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid;
+    margin-top: 60px;
+    height: 500px;
+}
+div.container div.details{
+    
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    gap:40px;
+
+}
+div.container div.details section.details{
+    text-align: left;
+    text-transform: capitalize;
+}
+div.container div.details section.data h4{
+    text-align: left;
+}
+div.container div.details h4{
+    font-size: 14px;
+    font-weight: 700;
+    /* line-height: 20px; */
+}
+div.container table{
+    text-align: left;
+    margin: 0px;
+}

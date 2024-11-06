@@ -1,0 +1,129 @@
+.font-robo {
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  .font-poppins {
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  .font-opensans {
+    font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+
+
+
+
+
+
+body{
+    margin: none;
+    padding: none;
+    outline: none;
+}
+
+#main{
+    background-color: black;
+    min-height: 200vh;
+    height: 180vh;;
+    padding-top: 100px;
+
+}
+div.container{
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    display: flex;
+    justify-content: center;
+    width: 843px;
+    height: 120vh;
+
+}
+div.container form{
+    margin-top: 60px;
+
+}
+
+div.container div.info{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+div.container div.info div.form-group input.form-control.items{
+    width: 240px;
+    margin-right: 20px;
+}
+div.container div.info div.form-group:last-child{
+    margin-right: 0;
+    margin-left: 10px;
+}
+div.container div.info div.form-group input[type=number],input[type=email]{
+    margin-right: 30px;
+}
+div.container div.second_line .form-group{
+    margin-top: 40px;
+}
+div.container div.department{
+    margin-top:20px;
+
+}
+div.container div.department select{
+    margin-left: 20px;
+    outline: none;
+    border: none;
+}
+div.container div.department select option{
+    padding: 20px;
+}
+div.container div.sem{
+    margin-top: 30px;
+}
+div.container div.sem div.semitems{
+    margin-left: 30px;
+}
+div.container form button{
+    margin-left: 20px;
+    margin-top: 13px;
+    width: 120px;
+    transition: 200ms
+    
+}
+div.container form button:hover{
+    letter-spacing: 1px;
+}
+header{
+    height: 80px;
+    background-color: black;
+    margin:0px;
+    padding: 0px;
+    align-items: center;
+    display: flex;
+
+}
+header h1{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 20px;
+}
+header h1 a{
+    text-decoration: none;
+    color: #FFF;
+}
+html{
+    scroll-behavior: smooth;
+    
+}
+
+
+

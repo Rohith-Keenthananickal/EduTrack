@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <!-- <script type="text/javascript" charset="utf8" src="../js/sweetalert2.min.js"></script> -->
+        <link href="{% static 'teachers/css/exam.css' %}" rel=stylesheet>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script src="{% static 'common/sweetalert2.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="{% static 'teachers/js/add_exam.js' %}"></script>
+        <title>TimeTable</title>
+    </head>
+    <body>
+            <header><h1>EduTrack</h1>
+            </header>
+        <section class="wrapper">
+            
+            <section id="main">
+                <form method="post" action="{% url 'Teachers:teacher/marks_data' %}" class="ajax">
+                    <div class="flex">
+
+                        <div class="sem">
+                            <label>Select Semester: </label>
+                            <select name="sem" id="sem" class="form-select">
+                                {% for s in semester %}
+                                <option value="{{s.id}}">{{s.semester_name|upper}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="exam_name">
+                        <label>Enter the Name of the Exam</label>
+                        <input type="text" class="form-control" placeholder="Name of the Exam" name="exam_name" /><br>
+                        
+                    </div>
+                    <div class="student">
+                        <label>Name of the Student</label>
+                        <select name="student_name" class="student_name form-select" aria-label="Default select example">
+                            <option>Select Name</option>
+                        </select>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 1</label>
+                            <select class="select1 form-select" name="sub1">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject1"/>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 2</label>
+                            <select class="select2 form-select" name="sub2">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject2"/>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 3</label>
+                            <select class="select3 form-select" name="sub3">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject3"/>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 4</label>
+                            <select class="select4 form-select" name="sub4">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject4"/>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 5</label>
+                            <select class="select5 form-select" name="sub5">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject5"/>
+                    </div>
+                    <div class="box2">
+                            <label>Subject 6</label>
+                            <select class="select6 form-select" name="sub6">
+                                <option>Select Subject</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Enter Marks" name="subject6"/>
+                    </div>
+                    <input type="submit" class="btn btn-primary button" name="submit" value="Submit" />
+                </form> 
+            </section>
+           
+        </section>
+    </body>
+</html>

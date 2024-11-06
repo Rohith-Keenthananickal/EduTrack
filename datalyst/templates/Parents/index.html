@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+    <head>
+		{% load static %}
+        <meta charset="UTF-8">
+        <title>Parent Dashboard </title>
+		{% include 'includes/bootstrap.html' %}
+        <link rel="stylesheet" href="{% static 'parents/css/style.css' %}">
+        <!-- Boxiocns CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/883a6fbfa4.js" crossorigin="anonymous"></script>
+		<script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script src="{% static 'parents/js/script.js' %}"></script>
+		
+    </head>
+	<body>
+		<div class="wrapper">
+			<div class="loader"></div>
+		</div>
+		<div class="sidebar close" id="nav">
+			<div class="logo-details">
+				<i class=''><img src="{% static 'others/favicon-16x16.png' %}"></i>
+				<span class="logo_name">Parent Pannel</span>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a href="#">
+					<i class='bx bx-grid-alt' ></i>
+					<span class="link_name">Dashboard</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Category</a></li>
+					</ul>
+				</li>
+			
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-list-check"></i>
+						<span class="link_name dropdownlink">Marks</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Marks</a></li>
+					<li><a href="{% url 'Parents:parent/mark' %}">View Marks</a></li>
+					
+					</ul>
+				</li>
+				<li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-calendar-check"></i>
+						<span class="link_name dropdownlink">Attendance</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Attendance</a></li>
+					<li><a href="{% url 'Parents:parent/attendance' %}">View Attendance</a></li>
+					</ul>
+				</li>
+				<!-- <li>
+					<div class="iocn-link">
+					<a href="#">
+					<i class="fa-solid fa-business-time"></i>
+						<span class="link_name dropdownlink">Timetable</span>
+					</a>
+					<i class='bx bxs-chevron-down arrow' ></i>
+					</div>
+					<ul class="sub-menu">
+					<li><a class="link_name" href="#">Timetable</a></li>
+					<li><a href="pages/timetable/timetable.php">View Timetable</a></li>
+					</ul>
+				</li> -->
+				
+				<li>
+					<a href="#">
+					<i class='bx bx-cog' ></i>
+					<span class="link_name">Setting</span>
+					</a>
+					<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Setting</a></li>
+					</ul>
+				</li>
+				<li>
+					<!-- <div class="profile-details">
+						<div class="profile-content">
+							<img src="image/profile.jpg" alt="profileImg">
+						</div>
+						<div class="name-job">
+							<div class="profile_name">
+							</div>
+							<div class="job">Web Desginer</div>
+						</div>
+						<i class='bx bx-log-out' ></i>
+					</div> -->
+				</li>
+			</ul>
+			
+		</div>
+		<section class="home-section">
+			<div class="home-content">
+			<i class='bx bx-menu' id="menu"></i>
+			
+			</div>
+			<section id="main">
+				<div class="container py-5">
+					<div class="row" id="row">
+					  	<div class="col-xl-3 col-lg-6 mb-4"></div>
+					</div>
+					  
+			  </div>
+			</section>
+		</section>
+	</body>
+</html>

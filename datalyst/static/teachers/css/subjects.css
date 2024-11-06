@@ -1,0 +1,103 @@
+.font-robo {
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  .font-poppins {
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  .font-opensans {
+    font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+
+
+
+
+
+
+body{
+    margin: none;
+    padding: none;
+    outline: none;
+    font-family: "Open Sans", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#main{
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    min-height: 100vh;
+    height: 150vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+#main section.top{
+    text-align: center;
+    height: 70px;
+    background-color: black;
+    width: 700px;
+    margin: 0 auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+#main section.top h1{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: "Poppins";
+}
+div.container{
+    background: #fff;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgb(0 0 0 / 15%);
+    width: 700px;
+    height: 100vh;
+ 
+
+}
+
+div.container div.form form{
+    width: 560px;
+    margin-top: 30px;
+}
+div.container div.form form div.mb-3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items:center;
+    
+}
+div.container div.form form div.mb-3 input.form-control{
+    width: 200px;
+    margin-left: 60px;
+}
+div.container div.form form div.mb-3 input.form-control.one{
+    margin-left: 80px;
+}
+
+div.container form button{
+    margin-left: 5px;
+    margin-top: 13px;
+    width: 120px;
+    transition: 200ms
+    
+}
+div.container form button:hover{
+    letter-spacing: 1px;
+}
+
+
+
+

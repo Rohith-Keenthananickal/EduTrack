@@ -1,0 +1,35 @@
+div.menu{
+    display: flex;
+    align-items: center;
+    gap :30px;
+}
+header{
+    height: 80px;
+    background-color: black;
+    margin:0px;
+    padding: 0px;
+    align-items: center;
+    display: flex;
+
+}
+header h1{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 20px;
+}
+header h1 a{
+    text-decoration: none;
+    color: #FFF;
+}
+div.semester{
+    margin: 20px;
+}
+div.semester select{
+    padding: 5px 8px;
+}
+section.wrapper{
+    min-height: 120vh;
+}
+div.sort{
+    margin-top: 40px;
+}

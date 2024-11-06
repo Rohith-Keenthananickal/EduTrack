@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <!-- <script type="text/javascript" charset="utf8" src="../js/sweetalert2.min.js"></script> -->
+        <link href="{% static 'students/css/marks.css' %}" rel=stylesheet>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="{% static 'parents/js/marks.js' %}"></script>
+        <title>TimeTable</title>
+    </head>
+    <body>
+            <header><h1><a href="http://localhost/dashboard/datalyst2/datalyst">EduTrack</a></h1>
+            </header>
+        <section class="wrapper">
+            
+            <section id="main" class="">
+                <form method="post" action="{% url 'Student:student/get_mark' %}" class="ajax">
+
+                    <div class="box1">
+                        <div class="sem">
+                            <label>Select Semester:</label>
+                            <select name="semester" id="sem">
+                                {% for s in semester %}
+                                <option value="{{s.id}}">{{s.semester_name|upper}}</option>
+                                {% endfor %}      
+                            </select>
+                        </div>
+                        
+                        <div class="exam_name">
+                            <label>Exam Name:</label>
+                            <select name="name" id="exam_name">
+                                {% for e in exam %}
+                                <option value="{{e.exam_name}}">{{e.exam_name|upper}}</option>
+                                {% endfor %}   
+                            </select>
+                        </div>
+                        
+                        <input type="submit" class="btn btn-primary button" value="Get Result">
+                    </div>
+                    
+                </form>
+                <div class="container table-responsive">
+                    <div class="details">
+                        <section class="details">
+                            <h4>Name     </h4>
+                            <h4>Roll No  </h4>
+                            <h4>Name of Exam </h4>
+                        </section>
+                        <section class="middle">
+                            <h4>:</h4>
+                            <h4>:</h4>
+                            <h4>:</h4>
+                        </section>
+                        <section class="data">
+
+                        </section>
+                        
+                    </div>
+                        
+                        <table id="marks" class="table table-hover table-dark table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody class="body">
+                                
+                            </tbody>    
+                        </table>
+                        
+                    
+                </div>
+
+            </section>
+        </section>
+        
+    </body>
+</html>

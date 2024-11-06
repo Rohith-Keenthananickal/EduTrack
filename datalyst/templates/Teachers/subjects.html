@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <script src="{% static 'common/sweetalert2.min.js' %}"></script>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script src="{% static 'teachers/js/subjects.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'teachers/css/subjects.css' %}"/>
+        <title>Subjects</title>
+    </head>
+    <body>
+        <section id="main">
+            <section class="top">
+                <h1>Add Subjects</h1>
+            </section>
+        <div class="container">
+            
+            <div class="form">
+                <form method="post" action="{% url 'Teachers:teacher/subjects' %}" class="ajax">
+                    {% csrf_token %}
+                    
+                        <div class="mb-3">
+                            <label class="form-label">Name of the Semester</label>
+                            <select name="sem" id="sem">
+                                <option>Select Semester</option>
+                                       
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 1</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 2</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 3</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 4</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 5</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <div class="mb-3">
+                            <label class="form-label">Name of Subject 6</label>
+                            <input type="text" name="sub" class="form-control" required>
+                        </div> 
+                        <button type="submit" class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+        </section>
+        
+        
+    </body>
+</html>

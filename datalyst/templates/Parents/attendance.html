@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <link href="{% static 'students/css/attendance.css' %}" rel=stylesheet>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="{% static 'parents/js/attendance.js' %}"></script>
+        <title>Attendance</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="http://localhost/dashboard/datalyst2/datalyst">EduTrack</a></h1>
+        </header>
+        <section class="wrapper">
+           
+            <section id="main" class="">
+                
+                <div class="menu-container">
+                    <div class="menu">
+                        
+                        
+                        <div class="semester">
+                            <label>Select Semester</label>
+                            <select name="semester" id="sem">
+                                {% for s in semester %}
+                                <option value="{{s.id}}">{{s.semester_name|upper}}</option>
+                                {% endfor %} 
+                            </select>
+                        </div>
+                            
+                        
+                        <div class="month">
+                            <label>Select Month</label>
+                            <input type="month" name="month" id="month" value="2023-04" />
+                        </div>
+                        <div class="sort">
+                            <label class="form-check-label">Sort By:</label>
+                            <div class="form-check">
+                            
+                                <input class="form-check-input" type="radio" name="sort" value="all" id="all" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    All
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" value="Present" id="flexRadioDefault2" >
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Present
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" value="Absent" id="absent" >
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Absent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <section id="tables">
+                        <div class="container table-responsive">
+                            <table id="attendance" class="table display" >
+                                <thead>
+                                    <tr>
+                                        <th>Adm No</th>
+                                        <th>Name</th>
+                                        <th>Roll No</th>
+                                        <th>Status</th>
+                                        <th>Month</th>
+                                        <th>Date</th>
+                                        <th>Hour 1</th>
+                                        <th>Hour 2</th>
+                                        <th>Hour 3</th>
+                                        <th>Hour 4</th>
+                                        <th>Hour 5</th>
+                                        <th>Hour 6</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                    <tr>
+                                        
+                                    </tr>
+                                </tbody>    
+                            </table>
+                        </div> 
+                    </section>
+            </section>
+        </section>
+    </body>

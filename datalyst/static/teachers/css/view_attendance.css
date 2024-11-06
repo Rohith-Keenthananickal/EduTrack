@@ -1,0 +1,64 @@
+section.wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    height: 80px;
+    background-color: black;
+    margin:0px;
+    padding: 0px;
+    align-items: center;
+    display: flex;
+
+}
+header h1{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 20px;
+}
+section.wrapper{
+    min-height: 120vh;
+}
+div.menu-container{
+    display: none;
+}
+div.menu-container.active{
+    display: block;
+}
+div.menu{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+div.menu div{
+    margin-left: 20px;
+}
+#tables{
+    margin-top:60px;
+    margin-bottom: 50px;
+    
+}
+#att{
+    margin-top: 20px
+}
+div.top{
+    display: flex;
+    margin-top: 60px;
+    gap: 50px;
+    align-items: center;
+    margin-left: 60px;
+}
+div.semester{
+    display: flex;
+    align-items: center;
+}
+div.semester label{
+    width:220px;
+}
+td.status{
+    text-transform: uppercase;
+}

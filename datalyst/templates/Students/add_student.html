@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		{% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+		<script src="{% static 'common/sweetalert2.min.js' %}"></script>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+		<script src="{% static 'students/js/signup.js' %}"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'students/css/signup.css' %}">
+        <title>Signup</title>
+    </head>
+    <body>
+        <section id="main">
+            <div class="container">
+				<form method="post" action="{% url 'Student:student/signup_data' %}" class="ajax">
+					{% csrf_token %}
+					<div class="name">
+						<div class="form-group">     
+							<input type="text" class="form-control items" name="fname">
+							<label for="firstname">First Name</label>
+						</div>
+						<div class="form-group">
+										
+							<input type="text" class="form-control items" name="mname">
+							<label for="middlename">Middle Name</label>
+						</div>
+						<div class="form-group last">	
+								<input type="text" class="form-control items last" name="lname">
+								<label for="lastname">Last Name</label>
+						</div>
+					</div>
+					<div class="checkbox">
+						
+						<div class="form-group">     
+							<input type="date" class="form-control items" name="dob">
+							<label for="firstname">DOB</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="gender" value="male" >
+							<label class="form-check-label" for="gender">
+							Male
+							</label>
+						</div>
+	
+						<div class="form-check pg">
+							<input class="form-check-input" type="radio" name="gender" value="female">
+							<label class="form-check-label" for="gender">
+							Female
+							</label>
+						</div>
+						
+					</div>
+					
+					<div class="depsem">
+						<div class="department">
+							<label for="department">Select Department:</label>
+							<select name="department" id="dep">
+								<option>Select Department</option>
+								{% for d in department %}
+								<option value="{{d.id}}">{{d.department_name|upper}}</option>
+								{% endfor %}    
+							</select>
+							
+						</div>
+						<div class="sem">
+							<label for="department">Select Semester:</label>
+							<select name="semester" id="sem">
+								<option>Select Semester</option>
+								<option value="semester 1">SEMESTER 1</option> 
+								<option value="semester 2">SEMESTER 2</option> 
+								<option value="semester 3">SEMESTER 3</option> 
+								<option value="semester 4">SEMESTER 4</option> 
+								<option value="semester 5">SEMESTER 5</option> 
+								<option value="semester 6">SEMESTER 6</option> 
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+							
+						<input type="number" class="form-control" name="adm_no">
+						<label for="number">Admission Number</label>
+					</div>
+					<div class="form-group">     
+							<input type="number" class="form-control items" name="rollno">
+							<label for="firstname">Roll No</label>
+						</div>
+					<div class="form-group">
+						<textarea class="form-control" id="exampleFormControlTextarea1" name="address" rows="3"></textarea>
+						<label for="exampleFormControlTextarea1">Address</label>
+					</div>
+					<div class="emailphone">
+						<div class="form-group email">
+								
+							<input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+							<label for="Email1">Email address</label>
+						</div>
+						<div class="form-group">
+								
+							<input type="number" class="form-control" name="phnumber">
+							<label for="number">Phone Number</label>
+						</div>
+					</div>
+					<div class="form-group">
+                           
+                            <input type="password" class="form-control" name="password" aria-describedby="password">
+                            <label for="password">Password for Login</label>
+                        </div>
+                        <div class="form-group">
+                           
+                            <input type="password" class="form-control" name="confirm_password" aria-describedby="password">
+                            <label for="password">Confirm Password</label>
+                        </div>
+					<div class="fatherdetails">
+						<div class="form-group">     
+							<input type="text" class="form-control items" name="father_name">
+							<label for="firstname">Father's Name</label>
+						</div>
+						<div class="form-group">     
+							<input type="text" class="form-control items" name="father_occupation">
+							<label for="firstname">Father's Occupation</label>
+						</div>
+						<div class="form-group">     
+							<input type="number" class="form-control items" name="father_phone_number">
+							<label for="firstname">Father's Phone Number</label>
+						</div>
+
+					</div>
+					<div class="motherdetails">
+						<div class="form-group">     
+							<input type="text" class="form-control items" name="mother_name">
+							<label for="firstname">Mother's Name</label>
+						</div>
+						<div class="form-group">     
+							<input type="text" class="form-control items" name="mother_occupation">
+							<label for="firstname">Mother's Occupation</label>
+						</div>
+						<div class="form-group">     
+							<input type="number" class="form-control items" name="mother_phone_number">
+							<label for="firstname">Mother's Phone Number</label>
+						</div>
+					</div>
+					<div class="marks">
+						<div class="form-group">     
+							<input type="number" class="form-control items" name="sslc">
+							<label for="firstname">SSLC Percentage %</label>
+						</div>
+						<div class="form-group">     
+							<input type="number" class="form-control items" name="plus_two">
+							<label for="firstname">Plus Two Percentage %</label>
+
+						</div>
+					</div>
+						
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Extracurricular Activities</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1" name="extracurricular_activities" rows="3"></textarea>
+					</div>
+					<div class="form-group regno">     
+						<input type="number" class="form-control items" name="regno">
+						<label for="firstname">Register Number</label>
+
+					</div>
+					<button type="submit" class="btn btn-primary">Signup</button>
+				</form>
+            </div>
+        </section>
+        
+    </body>
+</html>
+
+

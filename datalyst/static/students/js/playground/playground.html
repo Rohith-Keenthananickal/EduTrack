@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Coding Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/playground.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
+    <!-- Need prism CSS for highlight code -->
+    
+    <script src="codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <link rel="stylesheet" href="./prism/prism.css">
+    <link rel="stylesheet" href="./prism/live-master/prism-live.css">
+  </head>
+  <body class="">
+    <div id="coding_playground_outer">
+      <header id="playground_header">
+        <h1>live Coding Playground</h1>
+      </header>
+
+      <div class="page-wrap twilight">
+        <div class="boxes">
+          <div id="coding_area">
+            <textarea id="html" placeholder="HTML" class="prism-live language-html line-numbers language-markup"></textarea> 
+            <textarea id="css" placeholder="CSS" class="prism-live language-css line-numbers"></textarea> 
+            <textarea id="js" placeholder="javascript" class="prism-live language-js line-numbers"></textarea> 
+          </div>
+          
+          <div id="code_output">
+            <iframe id="code"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../../js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../../js/playground.js"></script>
+    
+    <!-- Need prism js for highlight code -->
+    <script type="text/javascript" src="./prism/prism.js"></script>
+    <script type="text/javascript" src="./prism/live-master/src/prism-live.js"></script>
+  </body>
+</html>

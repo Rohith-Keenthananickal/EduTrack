@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'includes/bootstrap.html' %}
+        <link href="{% static 'teachers/css/view_marks.css' %}" rel=stylesheet>
+        <script src="{% static 'common/jquery-3.6.1.min.js' %}"></script>
+        <script type="text/javascript" charset="utf8" src="{% static 'teachers/js/view_marks.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/b-html5-2.3.3/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/b-2.3.3/b-html5-2.3.3/datatables.min.js"></script>
+        <title>Exam</title>
+    </head>
+    <body>
+            <header><h1><a href="http://localhost/dashboard/datalyst2/datalyst">EduTrack</a></h1>
+            </header>
+        <section class="wrapper">
+            
+            <section id="main" class="">
+                <form method="post" action="{% url 'Teachers:teacher/exam_marks' %}" class="ajax">
+
+                    <div class="box1">
+                        <div class="sem">
+                            <label>Show by:</label>
+                            <select name="semester" id="sem">
+                                {% for s in semester %}
+                                <option value="{{s.id}}">{{s.semester_name|upper}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="exam_name">
+                            <label>Exam Name:</label>
+                            <select name="name" id="exam_name">
+                                
+                            </select>
+                        </div>
+                        <div class="rollno">
+                            <label>Enter Roll No</label>
+                            <input type="text" class="form-control" id="rollno" placeholder="Roll No" name="rollno" />
+                        </div>
+                        <input type="submit" class="btn btn-primary button" value="Get Result">
+                    </div>
+                    
+                </form>
+                <div class="container table-responsive">
+                    <div class="details">
+                        <section class="details">
+                            <h4>Name     </h4>
+                            <h4>Roll No  </h4>
+                            <h4>Name of Exam </h4>
+                        </section>
+                        <section class="middle">
+                            <h4>:</h4>
+                            <h4>:</h4>
+                            <h4>:</h4>
+                        </section>
+                        <section class="data">
+
+                        </section>
+                        
+                    </div>
+                        
+                        <table id="marks" class="table table-hover table-dark table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="body">
+                                
+                            </tbody>    
+                        </table>
+                        
+                    
+                    </div>
+
+                
+                
+            </section>
+        </section>
+        
+    </body>
+</html>
